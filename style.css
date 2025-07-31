@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+}
+
+.audio{
+   position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Vídeo de fundo */
+#video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Menu */
+.menu {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.menu li {
+  margin: 0 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #00bfff;
+}
+
+/* Sistema Solar */
+.sistema-solar {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.sol {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.sol img {
+  width: 170px;
+  animation: girarSol 12s linear infinite;
+}
+
+.orbita {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform-origin: center center;
+}
+
+.orbita img.planeta {
+  position: absolute;
+  top: -50%;
+  left: 100px;
+  width: 50px;
+}
+
+.planeta2 { animation: orbita2 8s linear infinite; }
+.planeta3 { animation: orbita3 10s linear infinite; }
+.planeta4 { animation: orbita4 14s linear infinite; }
+.planeta5 { animation: orbita5 18s linear infinite; }
+.planeta6 { animation: orbita6 5s linear infinite; }
+
+@keyframes girarSol {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbita2 {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+@keyframes orbita3 {
+  from { transform: rotate(0deg) translateX(130px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(130px) rotate(-360deg); }
+}
+@keyframes orbita4 {
+  from { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+}
+@keyframes orbita5 {
+  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+@keyframes orbita6 {
+  from { transform: rotate(0deg) translateX(240px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(240px) rotate(-360deg); }
+}
+
+/* Velocidade da luz + estrelas */
+.parallax-luz {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 200px;
+}
+
+.parallax-luz .luz {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 1;
+  pointer-events: none;
+  transition: transform 1s ease-out, opacity 1.5s ease-out;
+  filter: brightness(1.2) blur(1.5px);
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+}
+
+/* Estrelas rápidas */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url('/img/estrelas-velozes.png') repeat center;
+  background-size: cover;
+  animation: moverEstrelas 15s linear infinite;
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+@keyframes moverEstrelas {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+/* Conteúdo */
+.conteudo {
+  padding: 200px 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 100px;
+  animation: fadeIn 2s ease-in;
+}
+
+.layer {
+  margin: 400px auto;
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(150px) scale(1);
+  transition: all 0.8s ease-out;
+}
+
+.layer.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.layer.destacado {
+  transform: scale(1.3);
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px 10px #00bfff;
+  z-index: 5;
+  position: relative;
+}
+
+.layer.destacado .planeta {
+  width: 200px;
+}
+
+.layer.destacado p {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #fff;
+  text-shadow: 0 0 5px #00bfff;
+}
+
+.planeta {
+  width: 150px;
+  display: block;
+  margin: 0 auto 20px;
+  animation: flutuar 5s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+

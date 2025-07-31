@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planetário Interativo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Vídeo de fundo -->
+  <video autoplay loop muted id="video">
+    <source src="estrelas.mp4" type="video/mp4">
+    
+  </video>
+
+  <!-- Menu -->
+  <header>
+    <nav class="menu">
+      <ul>
+        <li><a href="#sistema">Sistema</a></li>
+        <li><a href="#explorar">Explorar</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+  <audio class="audio" controls autoplay loop>
+    <source src="musica.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Sistema Solar com órbitas -->
+  <section class="sistema-solar" id="sistema">
+    <div class="sol">
+      <img src="/img/sol.gif" alt="Sol">
+    </div>
+
+    <div class="orbita planeta2">
+      <img src="/img/venus.gif" class="planeta" alt="Vênus">
+    </div>
+
+    <div class="orbita planeta3">
+      <img src="/img/terra.gif" class="planeta" alt="Terra">
+    </div>
+
+    <div class="orbita planeta4">
+      <img src="/img/marte.gif" class="planeta" alt="Marte">
+    </div>
+
+    <div class="orbita planeta5">
+      <img src="/img/jupiter.gif" class="planeta" alt="Júpiter">
+    </div>
+
+    <div class="orbita planeta6">
+      <img src="/img/lua.gif" class="planeta" alt="Lua">
+    </div>
+  </section>
+
+  <!-- Conteúdo com efeito parallax -->
+  <section class="conteudo" id="explorar">
+    <h2>Vamos explorar?</h2>
+
+    <!-- Efeito de velocidade da luz -->
+    <div class="parallax-luz">
+      <img src="/img/velocidade.gif" class="luz" alt="Velocidade da luz">
+    </div>
+
+    <div class="layer reveal">
+      <img src="/img/sol.gif" class="planeta" alt="Sol">
+      <p>O Sol é uma estrela do tipo anã amarela localizada no centro do nosso sistema solar...</p>
+    </div>
+
+    <div class="layer reveal">
+      <img src="/img/venus.gif" class="planeta" alt="Vênus">
+      <p>Vênus é o segundo planeta a partir do Sol e é conhecido por sua atmosfera densa e quente...</p>
+    </div>
+
+    <div class="layer reveal">
+      <img src="/img/terra.gif" class="planeta" alt="Terra">
+      <p>A Terra é o terceiro planeta a partir do Sol e o único conhecido por abrigar vida...</p>
+    </div>
+
+    <div class="layer reveal">
+      <img src="/img/marte.gif" class="planeta" alt="Marte">
+      <p>Marte, conhecido como o Planeta Vermelho, é o quarto planeta do sistema solar...</p>
+    </div>
+
+    <div class="layer reveal">
+      <img src="/img/jupiter.gif" class="planeta" alt="Júpiter">
+      <p>Júpiter é o maior planeta do sistema solar e é conhecido por sua Grande Mancha Vermelha...</p>
+    </div>
+
+    <div class="layer reveal">
+      <img src="/img/lua.gif" class="planeta" alt="Lua">
+      <p>A Lua é o único satélite natural da Terra e é o quinto maior do sistema solar...</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
